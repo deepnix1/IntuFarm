@@ -3,8 +3,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { ArrowLeft, Search, Filter, TrendingUp, TrendingDown, Minus } from "lucide-react"
-import Link from "next/link"
+import { Search, Filter, TrendingUp, TrendingDown, Minus } from "lucide-react"
+import { Navigation } from "@/components/navigation"
 
 const pools = [
   {
@@ -79,38 +79,7 @@ export default function PoolsPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <nav className="border-b border-border bg-card/50 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-4">
-              <Button variant="ghost" size="sm" asChild>
-                <Link href="/">
-                  <ArrowLeft className="h-4 w-4 mr-2" />
-                  Back
-                </Link>
-              </Button>
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold text-lg">I</span>
-                </div>
-                <span className="text-xl font-bold font-sans">IntuFarm</span>
-              </div>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">
-                Home
-              </Link>
-              <Link href="/pools" className="text-foreground hover:text-primary transition-colors">
-                Pools
-              </Link>
-              <Link href="/staking" className="text-muted-foreground hover:text-primary transition-colors">
-                Staking
-              </Link>
-            </div>
-            <Button className="bg-primary hover:bg-primary/90">Connect Wallet</Button>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Header */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-card/30">
